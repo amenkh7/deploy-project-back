@@ -140,6 +140,9 @@ router.post("/uploadImage/:userId", upload.single("image"), async (req, res) => 
     res.status(500).send({ error: "Échec du téléchargement de l'image" });
   }
 });
+app.get("/api/ping", (req, res) => {
+  res.status(200).json({ message: "Backend is alive" });
+});
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/uploads", express.static("uploads"));
