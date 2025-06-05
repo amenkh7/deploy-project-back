@@ -37,7 +37,7 @@ exports.forgetPassword = async (req, res) => {
       from: process.env.EMAIL,
       to: email,
       subject: "Reset Password",
-      text: `Click here to reset your password: http://localhost:3000/resetpassword/${token}`,
+      text: `Click here to reset your password: https://deploy-project-back.onrender.com/resetpassword/${token}`,
     };
 
     transporter.sendMail(mailOptions, (err, info) => {
